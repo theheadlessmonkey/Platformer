@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg2sce1apg0pf"]
+[gd_scene load_steps=7 format=3 uid="uid://bg2sce1apg0pf"]
 
 [ext_resource type="PackedScene" uid="uid://cj84orki754tl" path="res://prefabs/player.tscn" id="1_pynkf"]
 [ext_resource type="Texture2D" uid="uid://b2xy6y1yyk8ys" path="res://sprites/tilemap.png" id="3_sbp16"]
 [ext_resource type="PackedScene" uid="uid://bgn4tck304bo6" path="res://prefabs/portal.tscn" id="3_ssint"]
+[ext_resource type="PackedScene" uid="uid://can63dcv43xon" path="res://prefabs/enemy.tscn" id="4_ouqtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sauk6"]
 texture = ExtResource("3_sbp16")
@@ -599,11 +600,14 @@ sources/4 = SubResource("TileSetAtlasSource_sauk6")
 position = Vector2(201, -146)
 
 [node name="portal" parent="." instance=ExtResource("3_ssint")]
-position = Vector2(979, 173)
+position = Vector2(2560, -19)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(132, 70)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_0olom")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131072, 65540, 1, -131071, 131076, 1, -131070, 196612, 1, 65541, 65540, 1, 65542, 131076, 1, 65543, 196612, 1, -262131, 65540, 1, -262130, 131076, 1, -262129, 196612, 1, 524301, 65540, 1, 524302, 131076, 1, 524303, 196612, 1, 458757, 65540, 5, 524293, 65540, 6, 589829, 65540, 7, 458758, 131076, 5, 524294, 131076, 6, 589830, 131076, 7, 458759, 196612, 5, 524295, 196612, 6, 589831, 196612, 7)
+layer_0/tile_data = PackedInt32Array(-131072, 65540, 1, -131071, 131076, 1, -131070, 196612, 1, 65541, 65540, 1, 65542, 131076, 1, 65543, 196612, 1, 524301, 65540, 1, 524302, 131076, 1, 524303, 196612, 1, 458757, 65540, 5, 524293, 65540, 6, 589829, 65540, 7, 458758, 131076, 5, 524294, 131076, 6, 589830, 131076, 7, 458759, 196612, 5, 524295, 196612, 6, 589831, 196612, 7, 65555, 131076, 0, 65556, 131076, 0, 65557, 131076, 0, 65558, 131076, 0, 26, 131076, 0, 27, 131076, 0, 28, 131076, 0, 29, 131076, 0, 30, 131076, 0, 31, 131076, 0, 131112, 131076, 0, 131113, 131076, 0, 131114, 131076, 0, 131115, 131076, 0, 131116, 131076, 0, 131117, 131076, 0, 131118, 131076, 0, 10, 131076, 0, 11, 131076, 0, 12, 131076, 0, 13, 131076, 0, -65520, 131076, 0, 327690, 131076, 0, 327691, 131076, 0, 458769, 131076, 0, 458770, 131076, 0, 458771, 131076, 0, 327700, 131076, 0, 327701, 131076, 0, 327702, 131076, 0, 327703, 131076, 0, 262169, 131076, 0, 262170, 131076, 0, 262171, 131076, 0, 196638, 131076, 0, 196639, 131076, 0, 196640, 131076, 0, 131106, 131076, 0, 131107, 131076, 0, 131108, 131076, 0)
+
+[node name="enemy" parent="." instance=ExtResource("4_ouqtn")]
+position = Vector2(2097, 160)
