@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 
-var start_position = Vector2(600,250)
+var start_position = Vector2(625, 370)
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -43,7 +43,7 @@ func _physics_process(delta):
 
 	
 	#respawn
-	if position.y > 900:
+	if position.y > 1300:
 		position = start_position
 
 func respawn():

@@ -1,83 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bg2sce1apg0pf"]
+[gd_scene load_steps=9 format=3 uid="uid://bg2sce1apg0pf"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_nueqs"]
-[ext_resource type="Texture2D" uid="uid://nmiep1cby2kn" path="res://sprites/player_tilesheet.png" id="2_hr5uf"]
+[ext_resource type="PackedScene" uid="uid://cj84orki754tl" path="res://prefabs/player.tscn" id="1_pynkf"]
 [ext_resource type="Texture2D" uid="uid://b2xy6y1yyk8ys" path="res://sprites/tilemap.png" id="3_sbp16"]
 [ext_resource type="PackedScene" uid="uid://bgn4tck304bo6" path="res://prefabs/portal.tscn" id="3_ssint"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="4_1djwr"]
 [ext_resource type="PackedScene" uid="uid://can63dcv43xon" path="res://prefabs/enemy.tscn" id="4_ouqtn"]
-[ext_resource type="Texture2D" uid="uid://cmkc1x5fqi8pw" path="res://Backgrounds/backgroundColorForest.png" id="6_asgh8"]
-[ext_resource type="Script" path="res://scripts/spike.gd" id="7_2epa1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vutbs"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(0, 0, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cgly"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(400, 220, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2j272"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(80, 0, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0qnq"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(160, 0, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wdx3w"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(240, 0, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eo5j6"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(0, 110, 80, 110)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmai4"]
-atlas = ExtResource("2_hr5uf")
-region = Rect2(80, 110, 80, 110)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ikh2t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vutbs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1cgly")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2j272")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c0qnq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wdx3w")
-}],
-"loop": false,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eo5j6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gmai4")
-}],
-"loop": true,
-"name": &"run",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5jr2"]
-size = Vector2(77, 104)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sauk6"]
 texture = ExtResource("3_sbp16")
@@ -348,7 +275,6 @@ texture_region_size = Vector2i(18, 18)
 8:3/0 = 0
 8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:3/0/physics_layer_0/angular_velocity = 0.0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.01041, 0.0883884, 5.83363, 0, 9, 9, -9, 9)
 8:4/0 = 0
 8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:4/0/physics_layer_0/angular_velocity = 0.0
@@ -671,60 +597,31 @@ sources/4 = SubResource("TileSetAtlasSource_sauk6")
 
 [sub_resource type="Curve2D" id="Curve2D_pa73x"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -26, 17, 0, 0, 0, 0, 268, 17, 0, 0, 0, 0, -26, 16, 0, 0, 0, 0, -26, 17)
+"points": PackedVector2Array(0, 0, 0, 0, -26, 17, 0, 0, 0, 0, 298, 16, 0, 0, 0, 0, -26, 16)
 }
-point_count = 4
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51ham"]
-texture = ExtResource("3_sbp16")
-separation = Vector2i(1, 1)
-texture_region_size = Vector2i(18, 18)
-8:3/0 = 0
-8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:3/0/physics_layer_0/angular_velocity = 0.0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.56847, 0, 5.92202, -0.176777, 9, 9, -9, 9)
-
-[sub_resource type="TileSet" id="TileSet_8g6yg"]
-tile_size = Vector2i(18, 18)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_51ham")
+point_count = 3
 
 [node name="game" type="Node2D"]
 
-[node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(624, 370)
-script = ExtResource("1_nueqs")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
-sprite_frames = SubResource("SpriteFrames_ikh2t")
-animation = &"run"
-autoplay = "idle"
-frame = 1
-frame_progress = 0.0971846
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(2.5, 3)
-shape = SubResource("RectangleShape2D_i5jr2")
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position_smoothing_enabled = true
+[node name="player" parent="." instance=ExtResource("1_pynkf")]
+position = Vector2(201, -146)
 
 [node name="portal" parent="." instance=ExtResource("3_ssint")]
-position = Vector2(2983, 497)
+position = Vector2(2560, -19)
 
-[node name="Blocks" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(132, 70)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_0olom")
 format = 2
-layer_0/tile_data = PackedInt32Array(524298, 65540, 1, 524299, 131076, 1, 524300, 196612, 1, 720911, 65540, 1, 720912, 131076, 1, 720913, 196612, 1, 655380, 131076, 0, 983060, 131076, 0, 655381, 131076, 0, 983061, 131076, 0, 655382, 131076, 0, 655383, 131076, 0, 1179671, 65540, 1, 1179672, 131076, 1, 1179673, 196612, 1, 589850, 131076, 0, 1114139, 131076, 0, 1114140, 131076, 0, 720925, 131076, 0, 1114141, 131076, 0, 720926, 131076, 0, 983070, 131076, 0, 720927, 131076, 0, 983071, 131076, 0, 720928, 131076, 0, 983072, 131076, 0, 983073, 131076, 0, 917539, 131076, 0, 655396, 131076, 0, 917540, 131076, 0, 655397, 131076, 0, 917541, 131076, 0, 655398, 131076, 0, 655399, 131076, 0, 655400, 131076, 0, 852008, 131076, 0, 655401, 131076, 0, 852009, 131076, 0, 852010, 131076, 0, 786476, 131076, 0, 786477, 131076, 0, 786478, 131076, 0, 786482, 131076, 0, 786483, 131076, 0, 786484, 131076, 0, 786485, 131076, 0, 786486, 131076, 0, 786487, 131076, 0, 786488, 131076, 0)
+layer_0/tile_data = PackedInt32Array(-131072, 65540, 1, -131071, 131076, 1, -131070, 196612, 1, 65541, 65540, 1, 65542, 131076, 1, 65543, 196612, 1, 524301, 65540, 1, 524302, 131076, 1, 524303, 196612, 1, 458757, 65540, 5, 524293, 65540, 6, 589829, 65540, 7, 458758, 131076, 5, 524294, 131076, 6, 589830, 131076, 7, 458759, 196612, 5, 524295, 196612, 6, 589831, 196612, 7, 65555, 131076, 0, 65556, 131076, 0, 65557, 131076, 0, 65558, 131076, 0, 26, 131076, 0, 27, 131076, 0, 28, 131076, 0, 29, 131076, 0, 30, 131076, 0, 31, 131076, 0, 131112, 131076, 0, 131113, 131076, 0, 131114, 131076, 0, 131115, 131076, 0, 131116, 131076, 0, 131117, 131076, 0, 131118, 131076, 0, 10, 131076, 0, 11, 131076, 0, 12, 131076, 0, 13, 131076, 0, -65520, 131076, 0, 327690, 131076, 0, 327691, 131076, 0, 458769, 131076, 0, 458770, 131076, 0, 458771, 131076, 0, 327700, 131076, 0, 327701, 131076, 0, 327702, 131076, 0, 327703, 131076, 0, 262169, 131076, 0, 262170, 131076, 0, 262171, 131076, 0, 196638, 131076, 0, 196639, 131076, 0, 196640, 131076, 0, 131106, 131076, 0, 131107, 131076, 0, 131108, 131076, 0)
 
 [node name="slime" type="Node2D" parent="."]
-position = Vector2(1995, 507)
 script = ExtResource("4_1djwr")
-metadata/_edit_group_ = true
+speed = null
 
 [node name="Path2D" type="Path2D" parent="slime"]
+position = Vector2(1562, 56)
 curve = SubResource("Curve2D_pa73x")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="slime/Path2D"]
@@ -733,32 +630,5 @@ rotation = -0.00308641
 rotates = false
 
 [node name="enemy" parent="slime/Path2D/PathFollow2D" instance=ExtResource("4_ouqtn")]
+position = Vector2(26.0524, -16.9197)
 rotation = 0.00308641
-
-[node name="_Timer_38155" type="Timer" parent="slime/Path2D/PathFollow2D"]
-wait_time = 0.2
-one_shot = true
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("6_asgh8")
-centered = false
-
-[node name="spike" type="Area2D" parent="."]
-script = ExtResource("7_2epa1")
-
-[node name="TileMap" type="TileMap" parent="spike"]
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_8g6yg")
-format = 2
-layer_0/tile_data = PackedInt32Array(655375, 524288, 3, 655376, 524288, 3, 655377, 524288, 3)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="spike"]
-polygon = PackedVector2Array(807, 597, 815, 564, 972, 565, 977, 596)
-
-[connection signal="body_entered" from="spike" to="spike" method="_on_body_entered"]
